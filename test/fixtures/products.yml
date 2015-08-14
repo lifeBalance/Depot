@@ -10,7 +10,7 @@ two:
   title: Second Fixture
   description: MyText
   image_url: MyString
-  price: 9.99
+  price: 10.99
 
 ruby:
   title: Programming Ruby - The Pickaxe
