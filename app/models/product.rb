@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  # Validations
   validates :title, :description, :image_url, :presence => true
   validates :price, :numericality => { :greater_than_or_equal_to =>  0.01 }
   validates :title, :uniqueness => true
@@ -6,4 +7,9 @@ class Product < ActiveRecord::Base
     :with => %r{\.(gif|jpg|png)\Z}i,
     :message => 'The image must be a GIF, JPG or PNG file.'
   }
+
+  # Caching
+  def self.latest
+    Product.order(:updated_at).last
+  end
 end
